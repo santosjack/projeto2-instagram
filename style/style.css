@@ -4,14 +4,65 @@
   box-sizing: border-box;
 }
 
+
+
+/*BEGIN-BACKGROUND-COLORS*/
+
+*{
+  --white1: #FAFAFA;
+  --white2: #FFFFFF;
+  --gray1: #E5E5E5;
+  --gray2: #DBDBDB;
+}
+
+/*END-BACKFOUNDCOLORS*/
+
+/*BEGIN-FONTCOLORS*/
+
+* {
+  --black1: #262626;
+  --black2: #000000;
+  --blue1: #139EF2;
+  --gray3: #8E8E8E;
+  --gray4: #C7C7C7;
+  --gray5: #979797;
+}
+
+/*END-FONTCOLORS*/
+
 body {
-  background-color: lightgray;
+  background-color: var(--white1);
   font-family: 'Roboto', sans-serif;
 }
 
+.font-normal{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--black1);
+}
+
+.font-medium{
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--black1);
+}
+
+.font-small{
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  color: var(--gray4);
+}
+
+.bold{
+  font-weight: 500;
+}
+
 .top {
-  background-color: #ffffff;
-  border: 1px solid #dbdbdb;
+  background-color: var(--white2);
+  border: 1px solid var(--gray2);
 
   width: 100%;
   height: 54px;
@@ -19,6 +70,7 @@ body {
   top: 0px;
 
   position: fixed;
+  z-index: 1;
 }
 
 .top .content-top{
@@ -41,14 +93,14 @@ body {
 }
 
 .top .content-top .logo ion-icon{
-  color: #000000;
+  color: var(--black2);
 
   width: 22px;
   height: 22px;
 }
 
 .top .content-top .logo .v-line{
-  background-color: #DBDBDB;
+  background-color: var(--gray2);
 
   width: 1px;
   height: 22px;
@@ -70,8 +122,8 @@ body {
   width: 150px;
   height: 29px;
 
-  background: #FAFAFA;
-  border: 1px solid #DBDBDB;
+  background: var(--white1);
+  border: 1px solid var(--gray2);
  
   border-radius: 3px;
 
@@ -79,7 +131,7 @@ body {
 
   font-weight: 400;
   font-size: 12px;
-  color: #979797;
+  color: var(--gray5);
 }
 
 .top .content-top .right-menu{
@@ -91,15 +143,13 @@ body {
 }
 
 .top .content-top .right-menu ion-icon{
-  color: #000000;
+  color: var(--black2);
 
   width: 22px;
   height: 22px;
 }
 
 .content {
-  background-color: #e5e5e5;
-
   width: 935px;
 
   margin: 88px auto 0 auto;
@@ -115,30 +165,48 @@ body {
 }
 
 .content .feed .stories-box {
-  background: #ffffff;
-  border: 1px solid #dbdbdb;
+  background: var(--white2);
+  border: 1px solid var(--gray2);
 
   width: 100%;
   height: 118px;
    
   margin-bottom: 24px;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.content .feed .stories-box .button{
+  position: absolute;
+  top: 35%;
+  right: 2%;
+
+  font-size: 26px;
+
+  color: var(--white2);
+  border-radius: 16px;
+  background-color: var(--gray2);
 }
 
 .content .feed .stories-box .storie{
-  background-color: aliceblue;
-
   width: 62px;
   height: 81px;
+
+  justify-self: flex-start;
+  margin-left: 18px;
+
 }
 
 .content .feed .stories-box .storie .storie-content {
   background-image: url(../images/content/stories_background.jpg); 
   background-size: contain;
 
-  width: 62px;
-  height: 62px;
-
-  padding: 3px;
+  width: 64px;
+  height: 64px;
 
   border-radius: 28px;
 }
@@ -146,18 +214,27 @@ body {
 .content .feed .stories-box .storie .storie-content  img{
   width: 56px;
   height: 56px;
-
+  margin: 4px 4px;
   border-radius: 28px;
  
 }
 
 .content .feed .stories-box .storie .title{
-  background-color: #FAFAFA;
+  margin-top: 6px;
+  width: 62px;
+  height: 19px;
+}
+
+.content .feed .stories-box .storie .title p{
+ 
+  text-align: center;
+
+  color: #262626;
 }
 
 .content .feed .posts-feed .post{
-  background: #FFFFFF;
-  border: 1px solid #DBDBDB;
+  background: var(--white2);
+  border: 1px solid var(--gray2);
   border-radius: 3px;
 
   width: 100%;
@@ -166,9 +243,223 @@ body {
   margin-bottom: 60px;
 }
 
-.content .sidebar{
-  background-color: #ffffff;
+.content .feed .posts-feed .post .post-top{
+  width: 100%;
+  height: 60px;
 
-  width: 293px;
-  height: 300px;
+  
+}
+
+.content .feed .posts-feed .post .post-top .post-top-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 95%;
+  height: 100%;
+
+  margin: auto auto;
+}
+
+.content .feed .posts-feed .post .post-top .perfil-info{
+  width: 156px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content .feed .posts-feed .post .post-top .perfil-info img{
+
+  width: 36px;
+  height: 36px;
+  border-radius: 28px;
+  border: 1px solid var(--gray2);
+}
+
+.content .feed .posts-feed .post .post-top .perfil-info p{
+  width: 109px;
+  height: 21px;
+
+  text-align: start;
+  
+
+  color: var(--black1);
+}
+
+.content .feed .posts-feed .post img{
+  width: 612px;
+  height: 612px;
+}
+
+.content .feed .posts-feed .post .post-bottom{
+  width: 100%;
+  height: 76px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .feed .posts-feed .post .post-bottom .buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  height: 50%;
+}
+
+.content .feed .posts-feed .post .post-bottom .buttons .left{
+  width: 102px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content .feed .posts-feed .post .post-bottom .buttons ion-icon{
+  width: 22px;
+  height: 22px;
+
+  color: var(--black2);
+}
+
+.content .feed .posts-feed .post .post-bottom .like-info{
+  width: 95%;
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.content .feed .posts-feed .post .post-bottom .like-info img{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.content .feed .posts-feed .post .post-bottom .like-info p{
+  width: 95%;
+
+  color: var(--black2);
+}
+
+.content .feed .posts-feed .post .post-bottom .like-info p strong{
+  font-weight: bold;
+}
+
+
+.content .sidebar{
+
+  width: 300px;
+  height: 438px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+.content .sidebar .perfil-info{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content .sidebar .perfil-info img{
+  width: 56px;
+  height: 56px;
+
+  border-radius: 28px;
+  border: 1px solid var(--gray2);
+}
+
+.content .sidebar .perfil-info .perfil-username{
+  width: 75%;
+}
+
+.content .sidebar .perfil-info .perfil-username p:not(:first-child){
+  color: var(--gray3);
+}
+
+.content .sidebar .sugg-panel{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+
+}
+
+.content .sidebar .sugg-panel .sugg-top{
+  display: flex;
+  justify-content: space-between;
+}
+
+.content .sidebar .sugg-panel .sugg-top p:first-child{
+  color: var(--gray3);
+}
+
+.content .sidebar .sugg-panel .sugg-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.content .sidebar .sugg-panel .sugg-content .sugg{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.content .sidebar .sugg-panel .sugg-content .sugg .sugg-perfil-info{
+  width: 186px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content .sidebar .sugg-panel .sugg-content .sugg .sugg-perfil-info img{
+  width: 32px;
+  height: 32px;
+
+  border-radius: 16px;
+}
+
+.content .sidebar .sugg-panel .sugg-content .sugg .sugg-perfil-info .left{
+  width: 20%;
+}
+
+.content .sidebar .sugg-panel .sugg-content .sugg .sugg-perfil-info .right{
+  width: 78%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content .sidebar .sugg-panel .sugg-content .sugg .sugg-perfil-info .down p{
+  color: var(--gray3);
+}
+
+.content .sidebar .sugg-panel .sugg-content .sugg .follow p{
+  color: var(--blue1);
+}
+
+.content .sidebar .sidebar-bottom{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content .sidebar .sidebar-bottom .menu-options{
+  margin-bottom: 15px;
+}
+
+
+@media (max-width: 935px) {
+	.content .sidebar {
+		display: none;
+	}
+
+  
 }
