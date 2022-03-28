@@ -73,6 +73,14 @@ body {
   z-index: 1;
 }
 
+.top .content-top-mobile{
+  display: none;
+}
+
+.bottom-mobile{
+  display: none;
+}
+
 .top .content-top{
   display: flex;
   justify-content: space-between;
@@ -460,6 +468,109 @@ body {
 	.content .sidebar {
 		display: none;
 	}
+
+  body{
+    width: 100vw;
+  }
+
+  .top{
+    width: 100%;
+  }
+
+  .top .content-top{
+    width: 95%;
+    height: 100%;
+  }
+
+  .content{
+    width: 100%;
+
+  }
+
+  .content .feed{
+    margin: 0 auto;
+  }
+
+}
+
+@media (max-width: 614px) {
+  
+  body{
+    width: 100vw;
+  }
+
+  .top{
+    width: 100%;
+  }
+
+  .top .content-top{
+    display: none;
+  }
+
+  .top .content-top-mobile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .top .content-top-mobile img{
+    width: 103px;
+    height: 29px;
+  }
+
+  .top .content-top-mobile .top ion-icon{
+    width: 22px;
+    height: 22px;
+  }
+
+  .content{
+    margin: 58px auto 0 auto;
+  }
+
+  .content .feed .stories-box{
+    margin: 0 auto 20px auto;
+    background-color: var(--white1);
+    border: none;
+    width: 100%;
+  }
+
+  .content .feed .stories-box .storie{
+    
+  }
+
+  .content .feed .stories-box .button{
+    display: none;
+  }
+
+ .bottom-mobile{
+   
+    display: block;
+    height: 54px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+
+    background-color: var(--white2);
+    border-top: 1px solid #DBDBDB;
+  }
+
+  .bottom-mobile .bottom-mobile-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+
+  }
+
+  .bottom-mobile .bottom-mobile-content ion-icon{
+    width: 22px;
+    height: 22px;
+  }
 
   
 }
